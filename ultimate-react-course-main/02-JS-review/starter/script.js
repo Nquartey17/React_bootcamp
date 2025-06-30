@@ -145,7 +145,7 @@ function getBook(id) {
 
 // Destructuring
 
-const book = getBook(1);
+const book = getBook(2);
 book;
 
 // const title = book.title;
@@ -181,6 +181,11 @@ const updatedBook = {
 };
 updatedBook;
 
+// Arrow functions
+// function getYear(str) {
+//   return str.split("-")[0];
+// }
+
 // parameter(s) => what to return
 const getYear = (str) => str.split("-")[0];
 console.log(getYear(publicationDate));
@@ -196,7 +201,28 @@ const pagesRange = pages > 1000 ? "over a thousand" : "less than a thousand";
 pagesRange;
 console.log(`The book has ${pagesRange} pages`);
 
-// Arrow functions
-// function getYear(str) {
-//   return str.split("-")[0];
-// }
+//Short circuiting - Second value if true, first if false
+console.log(true && "Some string");
+console.log(false && "Some string");
+console.log(hasMovieAdaptation && "This book has a movie");
+
+// falsy values : 0, '', null, undefined
+console.log("jonas" && "some String");
+console.log(0 && "some String");
+
+// || short circuits if first value is true
+console.log(true || "Some string");
+console.log(false || "Some string");
+
+console.log(book.translations.spanish);
+
+const spanishTranslation = book.translations.spanish || "Not translated";
+spanishTranslation;
+
+// for book at index 1
+console.log(book.reviews.librarything.reviewsCount);
+const countWrong = book.reviews.librarything.reviewsCount || "no data";
+countWrong;
+
+const count = book.reviews.librarything.reviewsCount ?? "no data";
+count;
