@@ -283,3 +283,13 @@ const pagesAllBooks = books.reduce(
   0 //initial value (can be number, object, array, etc)
 );
 pagesAllBooks;
+
+//sort
+// a- b is ascending. if negative value, a is first
+const arr = [3, 7, 1, 9, 6];
+//slice will create a new copy of array so original isn't altered
+const sorted = arr.slice().sort((a, b) => a - b);
+sorted;
+
+const sortedByPages = books.slice().sort((a, b) => b.pages - a.pages);
+sortedByPages;
