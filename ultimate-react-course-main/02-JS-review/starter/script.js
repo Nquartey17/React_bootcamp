@@ -181,13 +181,22 @@ const updatedBook = {
 };
 updatedBook;
 
+// parameter(s) => what to return
+const getYear = (str) => str.split("-")[0];
+console.log(getYear(publicationDate));
+
 // Template literals
 const summary = `${title} is a ${pages} long book, written by ${author},
-and published in ${publicationDate.split("-")[0]}
+and published in ${getYear(publicationDate)}
 The book has ${hasMovieAdaptation ? "" : "not"} been adapted has a movie`;
 summary;
 
-//Ternary operator
+// Ternary operator
 const pagesRange = pages > 1000 ? "over a thousand" : "less than a thousand";
 pagesRange;
 console.log(`The book has ${pagesRange} pages`);
+
+// Arrow functions
+// function getYear(str) {
+//   return str.split("-")[0];
+// }
