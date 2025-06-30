@@ -144,7 +144,7 @@ function getBook(id) {
 }
 
 // Destructuring
-
+/*
 const book = getBook(3);
 book;
 
@@ -161,14 +161,14 @@ console.log(author, title, genres);
 // const primaryGenre = genres[0];
 // const secondaryGenre = genres[1];
 
-/*  Rest operator -> ...name creates an array of values that haven't been destructured
- only works at the end of the operation */
+// Rest operator -> ...name creates an array of values that haven't been destructured
+// only works at the end of the operation
 
 const [primaryGenre, secondaryGenre, ...otherGenres] = genres;
 console.log(primaryGenre, secondaryGenre, otherGenres);
 
-/* Spread operator -> ...arrayName creates a new array and adds parameter at the
-beginning or end of array */
+// Spread operator -> ...arrayName creates a new array and adds parameter at the
+// beginning or end of array 
 const newGenres = [...genres, "epic fantasy"];
 
 // New properties/update to an object
@@ -236,3 +236,32 @@ function getTotalReviewCount(book) {
 }
 
 console.log(getTotalReviewCount(book));
+*/
+
+//Map, filter, reduce
+
+function getTotalReviewCount(book) {
+  const goodreads = book.reviews?.goodreads.reviewsCount;
+  //optimal chaining -> librarything doesn't exist for every book, use ? so it can be used for books with that element
+  //If there's is nothing, return 0
+  const librarything = book.reviews?.librarything?.reviewsCount ?? 0;
+  return goodreads + librarything;
+}
+
+const books = getBooks();
+books;
+
+const x = [1, 2, 3, 4, 5].map((element) => element * 2);
+console.log(x);
+
+const titles = books.map((book) => book.title);
+titles;
+
+// use () in arrow function if you need to use {}
+const essentialData = books.map((book) => ({
+  title: book.title,
+  author: book.author,
+  reviewsCount: getTotalReviewCount(book),
+}));
+
+essentialData;
