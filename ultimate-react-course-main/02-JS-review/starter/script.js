@@ -238,8 +238,7 @@ function getTotalReviewCount(book) {
 console.log(getTotalReviewCount(book));
 */
 
-//Map, filter, reduce
-
+//Map
 function getTotalReviewCount(book) {
   const goodreads = book.reviews?.goodreads.reviewsCount;
   //optimal chaining -> librarything doesn't exist for every book, use ? so it can be used for books with that element
@@ -265,3 +264,15 @@ const essentialData = books.map((book) => ({
 }));
 
 essentialData;
+
+//filter, returns array depending on if condition is T/F. can be chaned together
+const longBooksWithMove = books
+  .filter((book) => book.pages > 500)
+  .filter((book) => book.hasMovieAdaptation);
+longBooksWithMove;
+
+const adventureBooks = books
+  .filter((books) => books.genres.includes("adventure"))
+  .map((book) => book.title);
+
+adventureBooks;
