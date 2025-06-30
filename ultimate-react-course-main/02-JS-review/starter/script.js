@@ -183,5 +183,11 @@ updatedBook;
 
 // Template literals
 const summary = `${title} is a ${pages} long book, written by ${author},
-and published in ${publicationDate.split("-")[0]} `;
+and published in ${publicationDate.split("-")[0]}
+The book has ${hasMovieAdaptation ? "" : "not"} been adapted has a movie`;
 summary;
+
+//Ternary operator
+const pagesRange = pages > 1000 ? "over a thousand" : "less than a thousand";
+pagesRange;
+console.log(`The book has ${pagesRange} pages`);
