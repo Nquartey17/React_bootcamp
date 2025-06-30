@@ -145,7 +145,7 @@ function getBook(id) {
 
 // Destructuring
 
-const book = getBook(2);
+const book = getBook(1);
 book;
 
 // const title = book.title;
@@ -154,7 +154,6 @@ book;
 //variable names must be the same as object name
 const { title, author, pages, publicationDate, genres, hasMovieAdaptation } =
   book;
-
 console.log(author, title, genres);
 
 // Destructuring with arrays
@@ -162,6 +161,22 @@ console.log(author, title, genres);
 // const primaryGenre = genres[0];
 // const secondaryGenre = genres[1];
 
-const [primaryGenre, secondaryGenre] = genres;
+/*  Rest operator -> ...name creates an array of values that haven't been destructured
+ only works at the end of the operation */
 
-console.log(primaryGenre, secondaryGenre);
+const [primaryGenre, secondaryGenre, ...otherGenres] = genres;
+console.log(primaryGenre, secondaryGenre, otherGenres);
+
+/* Spread operator -> ...arrayName creates a new array and adds parameter at the
+beginning or end of array */
+const newGenres = [...genres, "epic fantasy"];
+
+// New properties/update to an object
+const updatedBook = {
+  ...book,
+  //Adding a new property
+  moviePublicationDate: "2001-12-19",
+  //Overwriting an existing property
+  pages: 1210,
+};
+updatedBook;
