@@ -265,7 +265,7 @@ const essentialData = books.map((book) => ({
 
 essentialData;
 
-//filter, returns array depending on if condition is T/F. can be chaned together
+//filter  returns array depending on if condition is T/F. can be chaned together
 const longBooksWithMove = books
   .filter((book) => book.pages > 500)
   .filter((book) => book.hasMovieAdaptation);
@@ -276,3 +276,10 @@ const adventureBooks = books
   .map((book) => book.title);
 
 adventureBooks;
+
+//reduce - reduce the entire array to one value
+const pagesAllBooks = books.reduce(
+  (sum, book) => sum + book.pages,
+  0 //initial value (can be number, object, array, etc)
+);
+pagesAllBooks;
