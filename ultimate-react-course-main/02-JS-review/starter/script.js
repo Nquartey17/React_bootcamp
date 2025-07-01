@@ -319,8 +319,23 @@ booksAfterUpdate;
 // test url of API
 // fetch is a promise, doesn't come immediately, which is why we use then and
 // it's the reason why jonas printed before the fetch response
-fetch("https://jsonplaceholder.typicode.com/todos")
-  .then((response) => response.json())
-  .then((data) => console.log(data));
+
+// fetch("https://jsonplaceholder.typicode.com/todos")
+//   .then((response) => response.json())
+//   .then((data) => console.log(data));
+
+// console.log("jonas");
+
+async function getTodos() {
+  // javascript won't move to the next line when using await
+  const response = await fetch("https://jsonplaceholder.typicode.com/todos");
+  const data = await response.json();
+  console.log(data);
+
+  return data;
+}
+
+const todos = getTodos();
+console.log(todos);
 
 console.log("jonas");
