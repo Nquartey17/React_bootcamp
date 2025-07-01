@@ -326,16 +326,48 @@ booksAfterUpdate;
 
 // console.log("jonas");
 
-async function getTodos() {
-  // javascript won't move to the next line when using await
-  const response = await fetch("https://jsonplaceholder.typicode.com/todos");
-  const data = await response.json();
-  console.log(data);
+// async function getTodos() {
+//   // javascript won't move to the next line when using await
+//   const response = await fetch("https://jsonplaceholder.typicode.com/todos");
+//   const data = await response.json();
+//   console.log(data);
 
-  return data;
+//   return data;
+// }
+
+// const todos = getTodos();
+// console.log(todos);
+
+// console.log("jonas");
+
+// Synchronous practice
+let pizza;
+
+function orderPizza() {
+  console.log("order pizza");
+  setTimeout(() => {
+    pizza = `pizza`;
+    console.log(`${pizza} is ready`);
+  }, 2000);
+  // pizza = "pizza";
+  console.log("pizza was order");
+}
+orderPizza();
+console.log(`Call friend`);
+console.log(`Eat ${pizza}`);
+
+// Asynchronous
+function orderPizza2(callback) {
+  setTimeout(() => {
+    const pizza = `pizza`;
+    callback();
+  }, 2000);
 }
 
-const todos = getTodos();
-console.log(todos);
+function pizzaReady(pizza) {
+  console.log(`Eat the ${pizza}`);
+}
 
-console.log("jonas");
+orderPizza2(pizzaReady);
+console.log("call friend"); // able to call friend wile pizza was still being made
+// Event listeners waiting for key press/click are an example of async
