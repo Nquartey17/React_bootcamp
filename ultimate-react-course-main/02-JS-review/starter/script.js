@@ -238,6 +238,7 @@ function getTotalReviewCount(book) {
 console.log(getTotalReviewCount(book));
 */
 
+/*
 //Map
 function getTotalReviewCount(book) {
   const goodreads = book.reviews?.goodreads.reviewsCount;
@@ -313,3 +314,13 @@ const booksAfterUpdate = booksAfterDelete.map((book) =>
   book.id === 1 ? { ...book, pages: 1210 } : book
 );
 booksAfterUpdate;
+*/
+
+// test url of API
+// fetch is a promise, doesn't come immediately, which is why we use then and
+// it's the reason why jonas printed before the fetch response
+fetch("https://jsonplaceholder.typicode.com/todos")
+  .then((response) => response.json())
+  .then((data) => console.log(data));
+
+console.log("jonas");
