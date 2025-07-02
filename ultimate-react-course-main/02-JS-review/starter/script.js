@@ -341,33 +341,35 @@ booksAfterUpdate;
 // console.log("jonas");
 
 // Synchronous practice
-let pizza;
+// let pizza;
 
-function orderPizza() {
-  console.log("order pizza");
-  setTimeout(() => {
-    pizza = `pizza`;
-    console.log(`${pizza} is ready`);
-  }, 2000);
-  // pizza = "pizza";
-  console.log("pizza was order");
-}
-orderPizza();
-console.log(`Call friend`);
-console.log(`Eat ${pizza}`);
+// function orderPizza() {
+//   console.log("order pizza");
+//   setTimeout(() => {
+//     pizza = `pizza`;
+//     console.log(`${pizza} is ready`);
+//   }, 2000);
+//   // pizza = "pizza";
+//   console.log("pizza was order");
+// }
+// orderPizza();
+// console.log(`Call friend`);
+// console.log(`Eat ${pizza}`);
 
-// Asynchronous
-function orderPizza2(callback) {
-  setTimeout(() => {
-    const pizza = `pizza`;
-    callback();
-  }, 2000);
-}
+// // Asynchronous
+// function orderPizza2(callback) {
+//   setTimeout(() => {
+//     const pizza = `pizza`;
+//     callback();
+//   }, 2000);
+// }
 
-function pizzaReady(pizza) {
-  console.log(`Eat the ${pizza}`);
-}
+// function pizzaReady(pizza) {
+//   console.log(`Eat the ${pizza}`);
+// }
 
-orderPizza2(pizzaReady);
-console.log("call friend"); // able to call friend wile pizza was still being made
-// Event listeners waiting for key press/click are an example of async
+// orderPizza2(pizzaReady);
+// console.log("call friend"); // able to call friend wile pizza was still being made
+// // Event listeners waiting for key press/click are an example of async
+
+//https://www.youtube.com/watch?v=TnhCX0KkPqs
